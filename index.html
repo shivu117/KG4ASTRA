@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <style>
+    body, html {
+    height: 100%;
+    }
+
+
+    .div1{
+    background-image: url("../static/missiles.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-color: rgba(0,0,0, 0.3);
+    color: Red;
+    font-weight: bold;
+     padding: 50px;
+     margin :10px;
+    }
+    .div1 h1 {
+
+        text-align: center;
+        font-size: 50px;
+    }
+
+    #header_img{
+        background-image: url("../static/Abdul-Kalam.jpg");
+        height: 100px;
+        width: 500x;
+        background-color: rgba(0,0,0, 0.3);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .bg_img{
+        background-image: url("../static/background.jpg");
+        filter: blur(1px);
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .div2 {
+    background-color: rgba(0,0,0, 0.4);
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+ <div id="header_img"> </div>
+    <div class="div1">
+            <h1>INDIAN MISSILES</h1>
+
+ </div>
+
+    <hr>
+
+    <div class="bg_img"> </div>
+    <div class="div2">
+        <h2>SELECT QUERY:</h2>
+        <form name="questions" action="." method="post">
+            <select name="choice" id="choice">
+                <option values = "" selected> </option>
+                <option values = "q1">{{q1}}</option>
+                <option values = "q2">{{q2}}</option>
+                <option values = "q3">{{q3}}</option>
+                <option values = "q4">{{q4}}</option>
+                <option values = "q5">{{q5}}</option>
+                <option values = "q6">{{q6}}</option>
+                <option values = "q7">{{q7}}</option>
+                <option values = "q8">{{q8}}</option>
+                <option values = "q9">{{q9}}</option>
+                 <option values = "q10">{{q10}}</option>
+                <option values = "q9">{{q11}}</option>
+                 <option values = "q10">{{q12}}</option>
+                <option values = "q9">{{q13}}</option>
+                 <option values = "q10">{{q14}}</option>
+                <option values = "q9">{{q15}}</option>
+
+            </select>
+            <input type="submit" name="table" value="show table">
+            <input type="submit" name="Graph" value="show graph">
+        </form>
+    </div>
+
+</body>
+</html>
