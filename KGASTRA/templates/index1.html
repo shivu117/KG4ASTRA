@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Indian Missile</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet"/>
+    <style>
+
+html, body {height:100%;}
+html {display:table; width:100%;}
+body {
+display:table-cell; text-align:center;
+padding: 0px;
+background-image: url({{ url_for('static', filename='missile.jpg') }});
+background-repeat: no-repeat;
+    background-size: cover;
+}
+.header
+{
+}
+.container::before{
+opacity:0.2;
+}
+  </style>
+</head>
+<body>
+ <div id="header">
+         <div class="row justify-content-center align-items-center">
+    <div class="col-sm-4">
+      <img src="{{ url_for('static',filename='Abdul-Kalam.jpg') }}" height="150" width="150" alt="This is Kalam sir" />
+    </div>
+    <div class="col-sm-4">
+      <h2 style="color:red;">Indian Missiles</h2>
+    </div>
+    <div class="col-sm-4">
+      <img src="{{ url_for('static',filename='missiles.jpg') }}" height="150" width="150" alt="This is Kalam sir" />
+    </div>
+  </div>
+ </div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Menu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">About Topic</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">KG4Astra</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About Authors</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+ <br><br>
+ <div id="container">
+     <div style="color:orange;background-color:white;opacity:0.7;"><h3>Select Query based on Missile Knowledge Graph</h3></div>
+      <form name="questions" action="." method="post">
+
+           <select name="choice" id="choice">
+               {% for x in qlist %}
+               {% if qselected == "" %}
+               <option values="" selected>{{qselected}}</option>
+               {% endif %}
+                <option values = "x" >{{x}}</option>
+                {% endfor %}
+
+            </select>
+            <input type="submit" name="table" value="Show Table">
+            <input type="submit" name="Graph" value="Show Graph">
+      </form>
+
+ </div>
+{% block body %}{% endblock %}
+ <div id="footer">
+
+ </div>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".dropdown-menu li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+<script type="text/javascript" src="{{url_for('static',filename='js/jquery-3.5.1.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+</body>
+</html>

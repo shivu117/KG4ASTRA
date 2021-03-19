@@ -1,0 +1,63 @@
+{% extends 'index1.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="jumbotron p-3">
+                <h2>Manage <b>Missile</b></h2>
+                <table class="table table-hover table-dark">
+                     {% if missile_minr|length > 0 %}
+        <tr> <th> Missile Name </th>
+        <th> min Operating Range </th>
+        <th> max Operating Range </th>
+        </tr>
+
+                   {% for i in range(0,names|length) %}
+                        <tr>
+                        <td>{{names[i]}}</td>
+                        <td>{{missile_minr[i]}}</td>
+                        <td>{{missile_maxr[i]}}</td>
+                           </tr>
+        {% endfor %}
+
+
+    {% endif %}
+
+                     {% if names|length > 0 and missile_minr|length == 0%}
+         <tr><th>Manufacturer Name</th>
+    {% if manufacter_origin|length>0 %}
+    <th>Manufacturer Origin</th>
+    {% endif %}
+             </tr>
+    {% for i in range(0,names|length) %}
+                     <tr>
+                        <td>{{names[i]}}</td>
+                         {% if manufacter_origin|length>0 %}
+                        <td>{{manufacter_origin[i]}}</td>
+                         {% endif %}
+                     </tr>
+{% endfor %}
+    {% endif %}
+
+
+ {% if Craft_name|length > 0 %}
+         <tr><th>Launch Platform</th></tr>
+    {% for i in range(0,Craft_name|length) %}
+                     <tr>
+                        <td>{{Craft_name[i]}}</td>
+
+                     </tr>
+{% endfor %}
+    {% endif %}
+
+
+</table>
+   </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
